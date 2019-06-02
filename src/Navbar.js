@@ -9,7 +9,7 @@ class Navbar extends Component {
     static contextType = ThemeContext;
 
     render() {
-        const { isDarkMode } = this.context;
+        const { isDarkMode,changeTheme } = this.context;
         const { classes } = this.props;
         return (
             <div className={classes.root}>
@@ -24,7 +24,7 @@ class Navbar extends Component {
                             color='inherit'>
                             App Title
                         </MaterialUI.Typography>
-                        <MaterialUI.Switch />
+                        <MaterialUI.Switch onChange={changeTheme}/>
                         <div className={classes.grow} />
                         <div className={classes.search}>
                             <div className={classes.searchIcon} >
