@@ -3,15 +3,19 @@ import * as MaterialUI from '@material-ui/core';
 import * as MaterialIcon from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/NavbarStyles'
+import { ThemeContext } from './contexts/ThemeContext';
 
 class Navbar extends Component {
+    static contextType = ThemeContext;
+
     render() {
+        const { isDarkMode } = this.context;
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                <MaterialUI.AppBar position="static" color="primary">
+                <MaterialUI.AppBar position="static" color={isDarkMode ? 'default' : 'primary'}>
                     <MaterialUI.Toolbar>
-                        <MaterialUI.IconButton lassName={classes.menuButton} color="inherit">
+                        <MaterialUI.IconButton className={classes.menuButton} color="inherit">
                             <span>🇫🇷</span>
                         </MaterialUI.IconButton>
                         <MaterialUI.Typography
@@ -30,7 +34,7 @@ class Navbar extends Component {
                                 classes={{
                                     root: classes.inputRoot,
                                     input: classes.inputInput
-                                }} 
+                                }}
                             />
                         </div>
                     </MaterialUI.Toolbar>
