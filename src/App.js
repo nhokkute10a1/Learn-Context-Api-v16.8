@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from './Navbar';
 import Form from './Form';
 import PageContent from './PageContent';
@@ -7,20 +7,17 @@ import { LanguageProvider } from './contexts/LanguageContext'
 
 
 
-class App extends Component {
-  state = {}
-  render() {
-    return (
-      <ThemeProvider>
-        <PageContent>
-          <LanguageProvider>
-            <Navbar />
-            <Form />
-          </LanguageProvider>
-        </PageContent>
-      </ThemeProvider>
+function App() {
+  return (
+    <ThemeProvider>
+      <PageContent>
+        <LanguageProvider>
+          <Navbar />
+          <Form />
+        </LanguageProvider>
+      </PageContent>
+    </ThemeProvider>
 
-    );
-  }
+  );
 }
 export default App;

@@ -1,4 +1,3 @@
-import { fade } from '@material-ui/core/styles/colorManipulator'
 const styles = theme => ({
     main: {
         width: 'auto',
