@@ -6,7 +6,7 @@ import Divider from "@material-ui/core/Divider";
 import { TodosContext } from "./context/todo.context";
 
 function TodoList() {
-  const {todos} = useContext(TodosContext);
+  const todos = useContext(TodosContext);
   if (todos.length)
     return (
       <Paper>
@@ -18,7 +18,7 @@ function TodoList() {
               <Todo
                 {...todo}
                 key={todo.id}
-                
+
               />
               {i < todos.length - 1 && <Divider />}
             </React.Fragment>
